@@ -32,7 +32,7 @@ export function AboutTownSection() {
           <div className="hidden lg:block">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/images/white-springs.PNG"
+                src="/white-springs/images/white-springs.PNG"
                 alt="Scenic view of White Springs, Florida"
                 fill
                 className="object-cover"

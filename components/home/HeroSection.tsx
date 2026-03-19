@@ -23,7 +23,7 @@ export function HeroSection() {
       >
         {!imageError ? (
           <Image
-            src="/images/bell-tower.PNG"
+            src="/white-springs/images/bell-tower.PNG"
             alt="Stephen Foster Memorial Bell Tower in White Springs, Florida"
             fill
             className="object-cover object-bottom"
