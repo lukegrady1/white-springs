@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-dm-mono), monospace;
-  --font-display: var(--font-playfair), serif;
+  --font-display: var(--font-jakarta), sans-serif;
   --font-body: var(--font-lato), sans-serif;
   --color-forest: #1B4332;
   --color-forest-light: #2D6A4F;

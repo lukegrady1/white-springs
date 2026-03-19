@@ -13,7 +13,7 @@ export function HeroSection() {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <section className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative h-screen flex items-center overflow-hidden">
       {/* Background layer */}
       <motion.div
         className="absolute inset-0"
@@ -22,12 +22,11 @@ export function HeroSection() {
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         {!imageError ? (
-          // Replace with actual Bell Tower photo
           <Image
-            src="/images/bell-tower.jpg"
+            src="/images/bell-tower.PNG"
             alt="Stephen Foster Memorial Bell Tower in White Springs, Florida"
             fill
-            className="object-cover"
+            className="object-cover object-bottom"
             priority
             onError={() => setImageError(true)}
           />
@@ -37,11 +36,11 @@ export function HeroSection() {
       </motion.div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/50 to-forest/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/40 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-2xl mr-auto">
           {/* Eyebrow + Headline */}
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}

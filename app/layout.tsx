@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato, DM_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Lato, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const playfair = Playfair_Display({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-jakarta",
   display: "swap",
-  weight: ["400", "700", "900"],
+  weight: ["400", "600", "700", "800"],
 });
 
 const lato = Lato({
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${lato.variable} ${dmMono.variable}`}
+      className={`${jakarta.variable} ${lato.variable} ${dmMono.variable}`}
     >
       <body className="font-body antialiased">
         <a
