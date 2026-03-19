@@ -8,7 +8,19 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-dm-mono), monospace;
+  --font-display: var(--font-playfair), serif;
+  --font-body: var(--font-lato), sans-serif;
+  --color-forest: #1B4332;
+  --color-forest-light: #2D6A4F;
+  --color-ivory: #FAF5E9;
+  --color-ivory-dark: #F0E8D4;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4BA6A;
+  --color-gold-dark: #B8963A;
+  --color-slate: #4A5568;
+  --color-sky: #5B9DC9;
+  --color-amber-banner: #D97706;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -121,9 +133,30 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-ivory text-slate;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  body > * {
+    position: relative;
+    z-index: 1;
   }
   html {
     @apply font-sans;
   }
+}
+
+@utility gold-divider {
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, var(--color-gold), transparent);
 }
