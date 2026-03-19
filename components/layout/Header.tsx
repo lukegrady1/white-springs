@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -19,8 +20,16 @@ const linkClasses =
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -34,15 +43,29 @@ export default function Header() {
   }, [mobileOpen, closeMobile]);
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-forest/95">
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-forest/95 backdrop-blur-md shadow-md' : 'bg-gradient-to-b from-black/40 to-transparent'}`}>
       <nav aria-label="Main navigation" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Wordmark */}
+        <div className="flex h-24 items-center justify-between">
+          {/* Town seal + wordmark */}
           <Link
             href="/"
-            className={`font-display text-xl font-bold text-ivory ${linkClasses}`}
+            className={`flex items-center gap-3 ${linkClasses}`}
           >
-            &#9884; White Springs
+            <Image
+              src="/white-springs/images/logo.png"
+              alt="Town of White Springs seal"
+              width={64}
+              height={64}
+              className="rounded-full"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="font-display text-2xl font-bold text-ivory tracking-wide">
+                White Springs
+              </span>
+              <span className="text-ivory/60 text-xs font-body uppercase tracking-[0.15em]">
+                Florida &middot; Est. 1885
+              </span>
+            </div>
           </Link>
 
           {/* Desktop nav */}

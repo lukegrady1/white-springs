@@ -16,7 +16,7 @@ export function AboutTownSection() {
           <div>
             <p className="font-body text-lg leading-relaxed text-slate">
               Nestled on the banks of the Suwannee River, White Springs has been
-              a cornerstone of Hamilton County since 1901. Home to the Stephen
+              a cornerstone of Hamilton County since 1885. Home to the Stephen
               Foster Folk Culture Center State Park and the historic sulfur
               springs that drew visitors from across the country, our town
               carries a rich tradition of community, culture, and Southern

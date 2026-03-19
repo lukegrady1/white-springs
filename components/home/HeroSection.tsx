@@ -36,7 +36,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-forest/60 via-forest/25 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -62,7 +62,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <p className="font-body text-ivory/80 text-lg mt-4">
-              Suwannee River Valley — Incorporated 1901
+              Suwannee River Valley — Est. 1885
             </p>
             <p className="font-body text-ivory/70 text-base mt-4 max-w-lg">
               Your official source for town announcements, services, and community news.
@@ -78,7 +78,7 @@ export function HeroSection() {
           >
             <a
               href="#announcements"
-              className="inline-flex items-center px-6 py-3 bg-gold text-forest font-body font-bold rounded-md hover:bg-gold-light transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+              className="inline-flex items-center px-6 py-3 bg-gold text-white font-body font-bold rounded-md hover:bg-gold-light transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
             >
               View Announcements ↓
             </a>
